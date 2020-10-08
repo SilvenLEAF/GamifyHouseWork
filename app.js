@@ -35,6 +35,9 @@ require('./config/mongoDBConfig');
 /* --------------------------------------
 .                   routes
 -------------------------------------- */
+app.use('/houseWork', require('./routes/houseWorkRoutes'))
+
+
 app.get('*', (req, res, next)=>{
   try {
     res.sendFile(path.join(__dirname, `/client/build/index.html`));
@@ -47,11 +50,11 @@ app.get('*', (req, res, next)=>{
 
 
 // errors handling
-app.use((err, req, res)=>{
+app.use((err, req, res, next)=>{
   console.log("err.message")
   logRed(err.message)
   console.log(err);
-  res.json({ msg: `Server error.`, error: err.message });
+  return res.status(500).json({ msg: `Server error.`, error: err.message });
 
 })
 
@@ -66,3 +69,5 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, ()=>{
   console.log(`Server is running on port ${ PORT }`);
 })
+
+

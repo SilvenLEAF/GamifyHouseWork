@@ -9,6 +9,10 @@ const HouseWorkSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Title MUST be gived'],
   },
+  ownerId: {
+    type: String,
+    required: true,
+  },
   isCompleted: {
     type: Boolean,
     default: false
