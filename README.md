@@ -1,2 +1,2 @@
-# VirtualTryOutAPP
-An APP to virtually try out cloths!!!
+# GamifyHouseWorkAPP
+Gamify your boring chores and super boring houseworks!
