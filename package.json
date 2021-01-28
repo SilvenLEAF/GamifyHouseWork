@@ -1,0 +1,25 @@
+{
+  "name": "practicecoding",
+  "version": "1.0.0",
+  "description": "This is my Playground where I practice and learn new concepts of Coding.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SilvenLEAF/PracticeCoding.git"
+  },
+  "keywords": [
+    "SilvenLEAF"
+  ],
+  "author": "SilvenLEAF",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SilvenLEAF/PracticeCoding/issues"
+  },
+  "homepage": "https://github.com/SilvenLEAF/PracticeCoding#readme",
+  "dependencies": {
+    "puppeteer": "^5.5.0"
+  }
+}
