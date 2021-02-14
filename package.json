@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/SilvenLEAF/PracticeCoding#readme",
   "dependencies": {
+    "express": "^4.17.1",
     "puppeteer": "^5.5.0"
   }
 }
