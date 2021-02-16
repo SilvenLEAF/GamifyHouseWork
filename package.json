@@ -4,7 +4,7 @@
   "description": "This is my Playground where I practice and learn new concepts of Coding.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app"
   },
   "repository": {
     "type": "git",
