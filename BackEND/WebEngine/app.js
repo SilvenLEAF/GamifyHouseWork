@@ -16,11 +16,7 @@ app.get("/", (request, response)=>{
 
 
 app.post("/me", (request, response)=>{
-  
   const { msg } = request.body;
-
-
-
   response.json({ message: msg });
 });
 
