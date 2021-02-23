@@ -21,6 +21,13 @@ app.post("/me", (request, response)=>{
 });
 
 
+app.use((err, req, res, next)=>{
+  console.log(err.message);
+  console.log(err);
+
+  res.status(500).json({ error: true, error: err.message || `Server Error!` })
+})
+
 
 
 const PORT = process.env.PORT || 5000;
