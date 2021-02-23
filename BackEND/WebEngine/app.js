@@ -13,14 +13,24 @@ app.use(express.static(path.join(__dirname, '/client')));
 /* -------------------------------------------
 .                   routes
 ------------------------------------------- */
-app.get("/", (request, response)=>{
-  response.sendFile(path.join(__dirname, '/client/index.html'));
+app.get("/", (req, res, next)=>{
+  try {
+    res.sendFile(path.join(__dirname, '/client/index.html'));
+  } catch (err) {
+    next(err, req, res);
+  }
 });
 
-app.post("/me", (request, response)=>{  
-  const { msg } = request.body;
-  response.json({ message: msg });
+app.post("/me", (req, res, next)=>{  
+  try {
+    const { msg } = req.body;
+    res.json({ message: msg });
+  } catch (err) {
+    next(err, req, res);
+  }
 });
+
+
 
 // error handler
 app.use((err, req, res, next)=>{
@@ -29,6 +39,8 @@ app.use((err, req, res, next)=>{
 
   res.status(500).json({ error: true, error: err.message || `Server Error!` })
 })
+
+
 
 
 
