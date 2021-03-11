@@ -2,7 +2,6 @@
 const fs = require('fs');
 
 
-
 // read file
 const theTextThatComputerRead = fs.readFileSync("readThisFile.html", "utf8");
 // write file
@@ -13,6 +12,8 @@ fs.unlinkSync('writeThisFile.js')
 
 // create folder
 fs.mkdirSync("myFolder");
+// rename folder
+fs.renameSync("myFolder", "myNewFolder")
 // delete folder
-fs.rmdirSync("myFolder");
+fs.rmdirSync("myNewFolder");
 
