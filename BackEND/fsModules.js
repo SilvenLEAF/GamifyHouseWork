@@ -6,8 +6,10 @@ const fs = require('fs');
 const theTextThatComputerRead = fs.readFileSync("readThisFile.html", "utf8");
 // write file
 fs.writeFileSync('writeThisFile.js', theTextThatComputerRead)
+// rename file
+fs.renameSync('writeThisFile.js','deleteThisFile.js')
 // delete file
-fs.unlinkSync('writeThisFile.js')
+fs.unlinkSync('deleteThisFile.js')
 
 
 // create folder
