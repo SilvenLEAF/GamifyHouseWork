@@ -32,6 +32,15 @@ app.post("/me", (req, res, next)=>{
   }
 });
 
+app.put("/me", (req, res, next)=>{  
+  try {
+    const { msg } = req.body;
+    res.json({ message: msg });
+  } catch (err) {
+    next(err, req, res);
+  }
+});
+
 
 
 // error handler
