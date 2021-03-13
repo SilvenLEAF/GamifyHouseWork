@@ -6,11 +6,14 @@ const fs = require('fs');
 
 // create folder
 fs.mkdirSync("myFolder");
+fs.mkdirSync("myParentFolder");
+
 // rename folder
 fs.renameSync("myFolder", "myNewFolder")
 // delete folder
 // fs.rmdirSync("myNewFolder");
-
+// move folder
+fs.renameSync('./myNewFolder', './myParentFolder/myNewFolder')
 
 
 // read file
@@ -22,6 +25,6 @@ fs.renameSync('writeThisFile.js','deleteThisFile.js');
 // delete file
 // fs.unlinkSync('deleteThisFile.js');
 // move file
-fs.renameSync('./deleteThisFile.js', './myNewFolder/deleteThisFile.js');
+// fs.renameSync('./deleteThisFile.js', './myNewFolder/deleteThisFile.js');
 
 
