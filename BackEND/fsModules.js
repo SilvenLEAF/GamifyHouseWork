@@ -1,9 +1,13 @@
+/* ______________________________________
+.               fs MODULE
+______________________________________ */
+
 // here I'm requiring this file to use those methods
 const fs = require('fs');
 
 
 
-
+// ------------------------------FOLDERS
 // create folder
 fs.mkdirSync("myFolder");
 // rename folder
@@ -14,6 +18,8 @@ fs.renameSync('./myNewFolder', './myParentFolder/myNewFolder');
 fs.rmdirSync("myNewFolder");
 
 
+
+// -------------------------------FILES
 // read file
 const theTextThatComputerRead = fs.readFileSync("readThisFile.html", "utf8");
 // write file
@@ -24,5 +30,3 @@ fs.renameSync('writeThisFile.js','deleteThisFile.js');
 fs.renameSync('./deleteThisFile.js', './myNewFolder/deleteThisFile.js');
 // delete file
 fs.unlinkSync('deleteThisFile.js');
-
-
