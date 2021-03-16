@@ -13,3 +13,8 @@ console.log(
 console.log(
   str1.charCodeAt(str1.length - 3) //the last character of a string is [str.length - 1] (because it's ZERO based)
 )
+
+// 3. concat(arr2, arr3, ...) --returns a new string by concatenating others
+console.log(
+  str1.concat(str2, str3) //it concatenates in the order of the given strings
+)
