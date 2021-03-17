@@ -23,3 +23,8 @@ console.log(
 console.log(
   str1.endsWith(`wo`, 9) //by default it searches full parent string if the length is not given
 )
+
+// 5. String.fromCharCode(n1, n2, ...) --returns a new string by converting the given Unicodes
+console.log(
+  String.fromCharCode(97, 98, 99, 100) //It's a Static method
+)
