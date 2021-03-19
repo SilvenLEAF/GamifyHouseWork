@@ -41,7 +41,7 @@ app.post('/upload', upload, (req, res, next)=>{
     const reqFile = req.file;
     const reqBody = req.body;
 
-    console.log(reqFile, reqBody);
+    console.log({reqFile, reqBody});
     res.send(`HI`)
 
 
@@ -69,6 +69,7 @@ app.listen(PORT, ()=>{
 
 function imageFilter (req, file, cb) {
   console.log('file***********************************/n', file)
+  console.log('file***********************************END')
   // Accept images only
   if (!file.originalname.match(/\.(jpg|JPG|jpeg|JPEG|png|PNG|gif|GIF)$/)) {
       req.fileValidationError = 'Only image files are allowed!';
