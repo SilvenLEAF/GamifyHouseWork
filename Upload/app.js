@@ -15,8 +15,19 @@ app.use(express.static(path.join(__dirname, `client`)));
 /* ------------------------------------
 .        multer settings (upload)
 ------------------------------------ */
-var upload = multer({ dest: 'uploads/' })
+const storage = multer.diskStorage({
+  destination: function(req, file, cb) {
+      cb(null, 'uploads/');
+  },
 
+  // By default, multer removes file extensions so let's add them back
+  filename: function(req, file, cb) {
+      cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+  }
+});
+
+//var upload = multer({ dest: 'uploads/' })
+let upload = multer({ storage: storage, fileFilter: imageFilter }).single('avatar');
 
 /* ------------------------------------
 .              routes (upload)
@@ -25,7 +36,7 @@ app.get('/', (req, res, next)=>{
   res.sendFile(path.join(__dirname, `client/index.html`));
 })
 
-app.post('/upload', upload.single('avatar'), (req, res, next)=>{
+app.post('/upload', upload, (req, res, next)=>{
   try {
     const reqFile = req.file;
     const reqBody = req.body;
@@ -57,6 +68,7 @@ app.listen(PORT, ()=>{
 
 
 function imageFilter (req, file, cb) {
+  console.log('file***********************************/n', file)
   // Accept images only
   if (!file.originalname.match(/\.(jpg|JPG|jpeg|JPEG|png|PNG|gif|GIF)$/)) {
       req.fileValidationError = 'Only image files are allowed!';
